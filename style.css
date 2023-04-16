@@ -1,0 +1,106 @@
+:root {
+    --main-colour: #00D647;
+    --background-colour: #222;
+    --fore-colour: #FFF;
+    --half-transparent: #0000007C;
+
+    --main-colour-filter: invert(60%) sepia(40%) saturate(3678%) hue-rotate(98deg) brightness(99%) contrast(105%);
+
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Cascadia Code", CascadiaCode, Consolas, Arial;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    color: var(--fore-colour);
+    background-color: var(--background-colour);
+
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    place-items: center;
+
+    min-height: 100vh;
+}
+
+button {
+    cursor: pointer;
+    width: 6rem;
+    height: 4rem;
+
+    background-color: transparent;
+    border: 0.3rem solid #333;
+    border-radius: 0.4rem;
+
+    font-weight: bolder;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+
+    width: 50rem;
+    height: 30rem;
+
+    background-color: red;
+}
+
+#output div {
+    background-color: rgb(77, 77, 226);
+    border-radius: 1rem;
+
+    width: 10rem;
+    height: 3rem;
+
+    color: white;
+
+    padding: 1rem;
+}
+
+#divs-container,
+#output {
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+
+    padding: 0.5rem;
+}
+
+#divs-container div {
+    width: 5rem;
+    height: 4rem;
+
+    background-color: transparent;
+    border: 0.4rem solid #333;
+    border-radius: 0.3rem;
+
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    place-items: center;
+
+    padding: 1rem;
+
+    font-weight: bolder;
+}
+
+.hide {
+    /* display: none; */
+}
