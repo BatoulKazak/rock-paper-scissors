@@ -7,6 +7,14 @@
     --main-colour-filter: invert(60%) sepia(40%) saturate(3678%) hue-rotate(98deg) brightness(99%) contrast(105%);
 
     font-size: 62.5%;
+
+    --button-width: 10rem;
+    --button-height: 4rem;
+}
+
+::selection {
+    background-color: transparent;
+    color: #FFF;
 }
 
 body {
@@ -18,7 +26,7 @@ body {
     margin: 0;
 
     color: var(--fore-colour);
-    background-color: var(--background-colour);
+    background-image: linear-gradient(45deg, #002, #000);
 
     display: flex;
     flex-direction: row;
@@ -28,44 +36,195 @@ body {
     min-height: 100vh;
 }
 
-button {
-    cursor: pointer;
-    width: 6rem;
-    height: 4rem;
-
-    background-color: transparent;
-    border: 0.3rem solid #333;
-    border-radius: 0.4rem;
-
-    font-weight: bolder;
-}
-
-button:hover {
-    background-color: white;
-    color: black;
-}
-
-#main-container {
+#paragraph {
     display: flex;
     flex-direction: column;
     place-content: center;
     place-items: center;
     gap: 1rem;
 
+    box-shadow: 0.5rem 0.5rem 10px black;
+
+    padding: 1rem 10rem;
+    color: #f59a7a;
+    font-weight: bolder;
+
+
+    text-shadow: 2px 2px 2px black;
+}
+
+#paragraph div:first-child {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+
+}
+
+#paragraph #circle {
+    width: 2rem;
+    aspect-ratio: 1;
+
+    border-radius: 30%;
+    rotate: 45deg;
+    background-image: linear-gradient(45deg, blue, pink);
+    box-shadow: 0.5rem -0.5rem 1rem #FFF;
+
+    border: 0.7rem groove violet;
+}
+
+#paragraph #circle:last-child {
+    box-shadow: -0.5rem 0.5rem 1rem #FFF;
+}
+
+#beautiful-border {
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+}
+
+#beautiful-border div {
+    background-color: #222;
+
+    width: 1rem;
+    aspect-ratio: 1;
+}
+
+#beautiful-border :nth-child(2n) {
+    background-color: #f39f9f;
+    width: 1.3rem;
+
+    border: 0.2rem groove violet;
+    border-radius: 30%;
+}
+
+#beautiful-border :nth-child(2n + 1) {
+    background-color: #00d687;
+    border: 0.3rem groove violet;
+    border-radius: 100%;
+}
+
+#beautiful-border :nth-child(3n) {
+    background-color: blue;
+    border: 0.3rem groove violet;
+}
+
+#beautiful-border :nth-child(4n) {
+    background-color: #fb4c4c;
+    border: 0.3rem groove violet;
+    border-radius: 40%;
+    rotate: 45deg;
+}
+
+button {
+    cursor: pointer;
+    width: var(--button-width);
+    height: var(--button-height);
+
+    color: #000;
+
+    background-image: linear-gradient(45deg, blue, pink);
+    border: 0.3rem solid #FFF;
+    border-radius: 1.4rem;
+    box-shadow: 0.3rem 0.3rem 1rem rgb(255, 255, 255);
+
+    font-weight: bolder;
+}
+
+button:hover {
+    width: calc(var(--button-width) + 20rem);
+    height: calc(var(--button-height) + 0.5rem);
+
+    font-size: larger;
+    transition: 1500ms;
+}
+
+button:active {
+    background-image: linear-gradient(45deg, red, blue);
+}
+
+#main-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    place-content: center;
+    place-items: center;
+    gap: 2rem;
+
     width: 50rem;
     height: 30rem;
 
-    background-color: red;
+    background-color: rgb(64, 62, 74);
+    border: 0.2rem;
+    border-top: 0.7rem groove #00D687;
+    border-right: 0.9rem groove #f39f9f;
+    border-bottom: 1.3rem groove blue;
+    border-left: 0.5rem groove red;
+    box-shadow: 5rem 7rem 3rem black;
+}
+
+#main-container #first-section,
+#main-container #last-section {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    gap: 1.5rem;
+}
+
+#main-container #first-section div,
+#main-container #last-section div {
+    width: 1rem;
+    aspect-ratio: 1;
+    
+    background-color: #00D647;
+    box-shadow: 1rem 1rem 1rem black;
+}
+
+#main-container #first-section div:nth-child(2n),
+#main-container #last-section div:nth-child(2n) {
+    background-color: #00D647;
+    border-radius: 100%;
+    width: 1.5rem;
+}
+
+#main-container #first-section div:nth-child(2n + 1),
+#main-container #last-section div:nth-child(2n + 1) {
+    background-color: #3d00d6;
+}
+
+#main-container #first-section div:nth-child(3n),
+#main-container #last-section div:nth-child(3n) {
+    background-color: #f39f9f;
+    rotate: 45deg;
+    width: 1.4rem;
+    border-radius: 30%;
+}
+
+#main-container #first-section div:nth-child(4n),
+#main-container #last-section div:nth-child(4n) {
+    background-color: #fb4c4c;
+    width: 1.2rem;
+    border-radius: 40%;
+
+}
+
+#second-section {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
 }
 
 #output div {
-    background-color: rgb(77, 77, 226);
-    border-radius: 1rem;
-
     width: 10rem;
     height: 3rem;
 
-    color: white;
+    color: #f3783f;
+    text-shadow: 3px 3px 3px black;
 
     padding: 1rem;
 }
@@ -76,18 +235,18 @@ button:hover {
     flex-direction: row;
     place-content: center;
     place-items: center;
-    gap: 1rem;
+    gap: 2rem;
 
     padding: 0.5rem;
 }
 
 #divs-container div {
-    width: 5rem;
+    width: auto;
     height: 4rem;
 
-    background-color: transparent;
-    border: 0.4rem solid #333;
-    border-radius: 0.3rem;
+    background-image: linear-gradient(45deg, blue, rgb(161, 161, 161));
+    box-shadow: 0.3rem 0.3rem 1rem #000;
+    border-radius: 2rem;
 
     color: white;
 
@@ -96,11 +255,66 @@ button:hover {
     place-content: center;
     place-items: center;
 
-    padding: 1rem;
+    padding: 1rem 1.5rem;
 
     font-weight: bolder;
+
+    cursor: pointer;
+}
+
+#divs-container div:hover {
+    border-radius: 1rem;
+    transition: 500ms;
+}
+
+#divs-container div:active {
+    background-image: linear-gradient(45deg, red, blue);
+    border: none;
+}
+
+#divs-container.hide,
+#output.hide,
+button.hide {
+    display: none;
+    /* visibility: hidden; */
 }
 
 .hide {
-    /* display: none; */
+    display: none;
+}
+
+.big {
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: 0;
+}
+
+.won {
+    background-color: #00D647;
+    transition: 1000ms;
+    width: 60rem;
+    height: 40rem;
+}
+
+@media (max-width: 36rem) {
+    #main-container {
+        width: 40rem;
+        transition: 500ms;
+    }
+
+    #first-section div,
+    #last-section div {
+        display: none;
+    }
+
+    #paragraph {
+        padding: 1rem 6rem;
+    }
+
+    #beautiful-border :nth-child(2n),
+    #beautiful-border :nth-child(2n + 1) {
+        border: none;
+    }
+
 }
